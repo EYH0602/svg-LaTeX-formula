@@ -7,6 +7,10 @@ description: >
   other tools (Excalidraw, Lark, Google Slides, Canva, etc.), or mentions needing
   LaTeX formulas as images/vectors. Also use when the user mentions pdf2svg or
   drawio-to-svg conversion for math content.
+license: MIT
+metadata:
+  author: Yifeng He
+  version: "1.0"
 ---
 
 # LaTeX Formula to SVG Conversion

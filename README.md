@@ -14,7 +14,8 @@ So a natural idea is: write your formulas in Draw.io,
 export them as SVGs, and import the SVGs into whatever tool you're actually using.
 
 But there's a catch: **Draw.io's SVG export doesn't work in most non-browser tools**.
-The exported SVGs use [`<foreignObject>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/foreignObject) elements to render text — an [early architectural decision](https://github.com/jgraph/drawio-desktop/issues/666) that can't be changed.
+The exported SVGs use [`<foreignObject>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/foreignObject)
+elements to render text — an [early architectural decision](https://github.com/jgraph/drawio-desktop/issues/666) that can't be changed.
 While browsers handle `<foreignObject>` fine, most other tools (Excalidraw, Lark, Word, Inkscape, etc.) don't support it, resulting in broken rendering or nothing at all.
 
 ## The Solution
@@ -27,6 +28,21 @@ The workaround is a two-step pipeline:
 2. **PDF → SVG**: Use [`pdf2svg`](https://github.com/dawbarton/pdf2svg) to convert each PDF into a standard SVG file.
 
 The resulting SVGs are clean, standard, and import correctly into virtually any tool that supports SVG.
+
+## Installation
+
+Install via [skillshub](https://github.com/EYH0602/skillshub):
+
+```bash
+cargo install skillshub
+skillshub link # link your agents
+skillshub install EYH0602/svg-LaTeX-formula/svg-LaTeX-formula # add the skill for one time
+
+# or add this repo as a tap for version tracking
+skillshub tap add EYH0602/svg-LaTeX-formula --install
+```
+
+Or use any other skill registry you like :)
 
 ## Prerequisites
 

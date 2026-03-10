@@ -13,9 +13,9 @@ When you need to include equations like `\frac{\partial f}{\partial x}` or `\sum
 So a natural idea is: write your formulas in Draw.io,
 export them as SVGs, and import the SVGs into whatever tool you're actually using.
 
-But there's a catch: **Draw.io's SVG export doesn't produce clean SVGs** with LaTeX.
-The exported files contain proprietary XML tags and embedded metadata that other tools can't parse.
-Try importing a Draw.io SVG into Excalidraw or Lark, and you'll get broken rendering or nothing at all.
+But there's a catch: **Draw.io's SVG export doesn't work in most non-browser tools**.
+The exported SVGs use [`<foreignObject>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/foreignObject) elements to render text — an [early architectural decision](https://github.com/jgraph/drawio-desktop/issues/666) that can't be changed.
+While browsers handle `<foreignObject>` fine, most other tools (Excalidraw, Lark, Word, Inkscape, etc.) don't support it, resulting in broken rendering or nothing at all.
 
 ## The Solution
 
